@@ -11,6 +11,7 @@ $(document).ready(function () {
 
   $("#taxForm").submit(function (event) {
     event.preventDefault();
+    $(".errorIcon").hide();
 
     // Get input values
     var grossIncome = $("#grossIncome").val();
@@ -26,7 +27,41 @@ $(document).ready(function () {
     // Validate input fields and show error icons
     var hasErrors = validateInputs(grossIncome, extraIncome, age, deductions);
     if (!hasErrors) {
-      console.log("Inputs have no errors");
+      // Perform form submission
+      // Calculate total income after deductions
+      var totalIncome =
+        parseFloat(grossIncome) +
+        parseFloat(extraIncome) -
+        parseFloat(deductions);
+      console.log(grossIncome + " " + extraIncome + " " + deductions);
+
+      // Calculate tax based on age and income
+      var tax;
+      if (totalIncome <= 8) {
+        tax = 0;
+      } else {
+        if (age === "<40") {
+          tax = 0.3 * (totalIncome - 8);
+        } else if (age === "≥ 40 &lt; 60") {
+          tax = 0.4 * (totalIncome - 8);
+        } else {
+          tax = 0.1 * (totalIncome - 8);
+        }
+      }
+      console.log(totalIncome);
+      console.log(tax.toFixed(2));
+
+      // Update the modal body with the calculated tax amount
+      $("#taxResult").html(
+        "<b>" + Math.floor((totalIncome - tax) * 100000) + " </b>"
+      );
+
+      // Activate the modal
+      $("#exampleModal").modal("show");
+      $("#exampleModal").on("hidden.bs.modal", function () {
+        // Clear all input fields
+        $("#taxForm")[0].reset();
+      });
     }
   });
 
@@ -39,14 +74,14 @@ $(document).ready(function () {
     var hasErrors = false;
 
     //Add error messages to show in tooltip
-    if (isNaN(grossIncome)) {
+    if (isNaN(grossIncome) || grossIncome === "") {
       errorGross = "Please enter numbers only.";
       hasErrors = true;
     } else if (grossIncome < 0) {
       errorGross = "Gross annual income cannot be negative.";
       hasErrors = true;
     }
-    if (isNaN(extraIncome)) {
+    if (isNaN(extraIncome) || extraIncome === "") {
       errorExtra = "Please enter numbers only.";
       hasErrors = true;
     } else if (extraIncome < 0) {
@@ -57,14 +92,13 @@ $(document).ready(function () {
       errorAge = "Please select the age group.";
       hasErrors = true;
     }
-    if (isNaN(deductions)) {
+    if (isNaN(deductions) || deductions === "") {
       errorDeductions = "Please enter numbers only.";
       hasErrors = true;
     } else if (deductions < 0) {
       errorDeductions = "Deductions cannot be negative.";
       hasErrors = true;
     }
-
     console.log(errorGross);
     console.log(errorExtra);
     console.log(errorAge);
