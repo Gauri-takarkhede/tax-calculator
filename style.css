@@ -1,0 +1,54 @@
+/* form */
+
+.container {
+  width: 50%;
+  margin: 5rem auto;
+  padding: 2rem;
+  border: 1px solid black;
+}
+.container h1 {
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.helpIcon img,
+.errorIcon img {
+  height: 1.5rem;
+}
+.errorIcon img {
+  position: absolute;
+  margin-top: 0.3rem;
+}
+
+.input-container span {
+  position: relative;
+  right: 2rem;
+}
+
+#ageError {
+  display: inline;
+}
+.input-container {
+  width: 100%;
+}
+.input-container input {
+  width: 100%;
+  padding: 0.2rem;
+}
+
+#age {
+  width: 100%;
+  padding: 0.2rem;
+}
+
+#submit {
+  width: 100%;
+  border-radius: 0;
+  margin-top: 2.5rem;
+}
+
+/* Modal */
+
+#taxResult {
+  text-align: center;
+}
