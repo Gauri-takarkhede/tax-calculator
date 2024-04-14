@@ -17,15 +17,28 @@
     <div class="container">
       <h1 class="my-6">Tax Calculator</h1>
 
+      <!-- Form -->
       <form id="taxForm" novalidate>
         <div class="mb-3">
           <label for="grossIncome">Enter gross annual income (in Lakhs)</label>
-          <span class="helpIcon"
+          <span
+            class="helpIcon"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Gross annual income is your total salary in a year before any deductions"
             ><img src="./icons/help-circle-outline.svg" alt=""
           /></span>
           <div class="input-container">
             <input placeholder="Enter gross annual income" id="grossIncome" />
-            <span id="grossIncomeError" class="errorIcon">
+            <span
+              id="grossIncomeError"
+              class="errorIcon"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title="no errors"
+            >
               <img src="./icons/alert-circle-outline.svg" alt="" />
             </span>
           </div>
@@ -33,7 +46,12 @@
 
         <div class="mb-3">
           <label for="extraIncome">Enter extra income (in Lakhs)</label>
-          <span class="helpIcon"
+          <span
+            class="helpIcon"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Any additional earnings beyond your regular salary, such as bonuses or freelance income."
             ><img src="./icons/help-circle-outline.svg" alt=""
           /></span>
           <div class="input-container">
@@ -41,7 +59,14 @@
               placeholder="Enter extra income from other sources"
               id="extraIncome"
             />
-            <span id="extraIncomeError" class="errorIcon">
+            <span
+              id="extraIncomeError"
+              class="errorIcon"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title="no errors"
+            >
               <img src="./icons/alert-circle-outline.svg" alt="" />
             </span>
           </div>
@@ -50,7 +75,12 @@
         <div class="mb-3">
           <div class="dropdown">
             <label for="age">Enter age group</label>
-            <span class="helpIcon"
+            <span
+              class="helpIcon"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title="Select your age category for tax calculation purposes."
               ><img src="./icons/help-circle-outline.svg" alt=""
             /></span>
             <div class="input-container">
@@ -60,7 +90,14 @@
                 <option value="≥ 40 &lt; 60">&ge; 40 &lt; 60</option>
                 <option value="≥ 60">&ge; 60</option>
               </select>
-              <span id="ageError" class="errorIcon">
+              <span
+                id="ageError"
+                class="errorIcon"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip"
+                data-bs-title="no errors"
+              >
                 <img src="./icons/alert-circle-outline.svg" alt="" />
               </span>
             </div>
@@ -71,7 +108,12 @@
           <label for="deductions"
             >Enter total applicable deductions (in Lakhs)</label
           >
-          <span class="helpIcon"
+          <span
+            class="helpIcon"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Input the total amount of eligible deductions to reduce taxable income."
             ><img src="./icons/help-circle-outline.svg" alt=""
           /></span>
           <div class="input-container">
@@ -79,7 +121,14 @@
               placeholder="Add total applicable deductions"
               id="deductions"
             />
-            <span id="deductionsError" class="errorIcon">
+            <span
+              id="deductionsError"
+              class="errorIcon"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title="no errors"
+            >
               <img src="./icons/alert-circle-outline.svg" alt="" />
             </span>
           </div>
