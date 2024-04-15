@@ -1,3 +1,4 @@
+//To initialize tooltip
 const tooltipTriggerList = document.querySelectorAll(
   '[data-bs-toggle="tooltip"]'
 );
@@ -5,10 +6,11 @@ const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
 
+//tax calculation
 $(document).ready(function () {
-  // Form submission
   $(".errorIcon").hide();
 
+  // Form submission
   $("#taxForm").submit(function (event) {
     event.preventDefault();
     $(".errorIcon").hide();
@@ -19,15 +21,12 @@ $(document).ready(function () {
     var age = $("#age").val();
     var deductions = $("#deductions").val();
 
-    console.log(grossIncome);
-    console.log(extraIncome);
-    console.log(age);
-    console.log(deductions);
-
     // Validate input fields and show error icons
     var hasErrors = validateInputs(grossIncome, extraIncome, age, deductions);
+
+    // Input fields has no error
+    // Perform Calculations
     if (!hasErrors) {
-      // Perform form submission
       // Calculate total income after deductions
       var totalIncome =
         parseFloat(grossIncome) +
@@ -48,8 +47,6 @@ $(document).ready(function () {
           tax = 0.1 * (totalIncome - 8);
         }
       }
-      console.log(totalIncome);
-      console.log(tax.toFixed(2));
 
       // Update the modal body with the calculated tax amount
       $("#taxResult").html(
@@ -99,10 +96,6 @@ $(document).ready(function () {
       errorDeductions = "Deductions cannot be negative.";
       hasErrors = true;
     }
-    console.log(errorGross);
-    console.log(errorExtra);
-    console.log(errorAge);
-    console.log(errorDeductions);
 
     //If there is any error, error icon will activate(toggle)
     if (hasErrors) {
