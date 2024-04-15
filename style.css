@@ -1,6 +1,5 @@
 /* main */
 .landing-page {
-  height: 100vh;
   color: #044bb3;
 }
 
@@ -57,6 +56,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 40%;
 }
 
 .main-content h1 {
@@ -205,4 +205,51 @@ select {
 
 .rfooter h5 {
   font-family: "Rowdies", sans-serif;
+}
+
+/* responsiveness */
+@media (max-width: 1250px) {
+  .main-content h1 {
+    font-size: 2.5rem;
+  }
+  .main-content h4 {
+    font-size: 1.3rem;
+  }
+  .container {
+    padding: 2rem;
+  }
+  .main {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+  .tax-calculator {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 35rem;
+  }
+  .main-content {
+    margin: 2rem;
+    text-align: left;
+    width: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-section {
+    flex-direction: column;
+  }
+  .rfooter {
+    margin: 0;
+  }
+  .tax-calculator {
+    width: 100%;
+  }
+  .container {
+    padding: 1rem;
+  }
 }
