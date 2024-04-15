@@ -149,3 +149,60 @@ select {
   font-family: "Rowdies", sans-serif;
   margin-bottom: 2rem;
 }
+
+/* footer */
+
+.footer {
+  margin-top: 4rem;
+  color: #044bb3;
+
+  width: 100%;
+  background-color: #cfe2ff;
+}
+
+.endpart {
+  background-color: #9abff7;
+  text-align: center;
+  height: 3rem;
+  padding: 1rem;
+}
+
+.footer-section {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-around;
+}
+
+.lfooter {
+  margin: auto;
+}
+.lfooter span {
+  font-family: "Rowdies", sans-serif;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.lfooter img {
+  height: 2rem;
+}
+
+.quote {
+  margin: 3rem 0rem 2rem 0rem;
+}
+
+.rfooter {
+  margin: auto;
+}
+.contact {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact img {
+  height: 2rem;
+  margin: 0.5rem;
+}
+
+.rfooter h5 {
+  font-family: "Rowdies", sans-serif;
+}
