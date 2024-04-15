@@ -12,132 +12,346 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Rowdies:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <h1 class="my-6">Tax Calculator</h1>
-
-      <!-- Form -->
-      <form id="taxForm" novalidate>
-        <div class="mb-3">
-          <label for="grossIncome">Enter gross annual income (in Lakhs)</label>
-          <span
-            class="helpIcon"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            data-bs-custom-class="custom-tooltip"
-            data-bs-title="Gross annual income is your total salary in a year before any deductions"
-            ><img src="./icons/help-circle-outline.svg" alt=""
-          /></span>
-          <div class="input-container">
-            <input placeholder="Enter gross annual income" id="grossIncome" />
-            <span
-              id="grossIncomeError"
-              class="errorIcon"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip"
-              data-bs-title="no errors"
-            >
-              <img src="./icons/alert-circle-outline.svg" alt="" />
-            </span>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="extraIncome">Enter extra income (in Lakhs)</label>
-          <span
-            class="helpIcon"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            data-bs-custom-class="custom-tooltip"
-            data-bs-title="Any additional earnings beyond your regular salary, such as bonuses or freelance income."
-            ><img src="./icons/help-circle-outline.svg" alt=""
-          /></span>
-          <div class="input-container">
-            <input
-              placeholder="Enter extra income from other sources"
-              id="extraIncome"
-            />
-            <span
-              id="extraIncomeError"
-              class="errorIcon"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip"
-              data-bs-title="no errors"
-            >
-              <img src="./icons/alert-circle-outline.svg" alt="" />
-            </span>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <div class="dropdown">
-            <label for="age">Enter age group</label>
-            <span
-              class="helpIcon"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip"
-              data-bs-title="Select your age category for tax calculation purposes."
-              ><img src="./icons/help-circle-outline.svg" alt=""
-            /></span>
-            <div class="input-container">
-              <select id="age">
-                <option disabled selected value="">Select Age Group</option>
-                <option value="<40">&lt; 40</option>
-                <option value="≥ 40 &lt; 60">&ge; 40 &lt; 60</option>
-                <option value="≥ 60">&ge; 60</option>
-              </select>
-              <span
-                id="ageError"
-                class="errorIcon"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                data-bs-custom-class="custom-tooltip"
-                data-bs-title="no errors"
-              >
-                <img src="./icons/alert-circle-outline.svg" alt="" />
-              </span>
+    <div class="landing-page">
+      <div class="header">
+        <img src="./images/sideimg2.png" alt="" />
+        <span><h2>Tax Track</h2></span>
+      </div>
+      <div class="main">
+        <div class="main-content">
+          <h5>Tax is not scary !</h5>
+          <h1>
+            Calculate your <br />
+            tax libilities
+          </h1>
+          <h4 style="margin-bottom: 3rem">
+            Maximize Returns, Minimize Hassle with Our Tax Calculator.
+          </h4>
+          <h5 class="mb-3">Our Customers</h5>
+          <div class="people">
+            <div class="p1"><img src="./images/p1.jpg" alt="" /></div>
+            <div class="p1"><img src="./images/p2.jpg" alt="" /></div>
+            <div class="p1"><img src="./images/p3.jpg" alt="" /></div>
+            <div class="p1"><img src="./images/p4.jpg" alt="" /></div>
+            <div class="p1"><img src="./images/p5.jpg" alt="" /></div>
+            <div class="p1"><img src="./images/p6.jpg" alt="" /></div>
+            <div class="p2">
+              <p><b>2k+</b></p>
             </div>
           </div>
         </div>
+        <div class="tax-calculator">
+          <div class="container">
+            <h1 class="my-6">Tax Calculator</h1>
 
-        <div class="mb-3">
-          <label for="deductions"
-            >Enter total applicable deductions (in Lakhs)</label
-          >
-          <span
-            class="helpIcon"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            data-bs-custom-class="custom-tooltip"
-            data-bs-title="Input the total amount of eligible deductions to reduce taxable income."
-            ><img src="./icons/help-circle-outline.svg" alt=""
-          /></span>
-          <div class="input-container">
-            <input
-              placeholder="Add total applicable deductions"
-              id="deductions"
-            />
-            <span
-              id="deductionsError"
-              class="errorIcon"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip"
-              data-bs-title="no errors"
-            >
-              <img src="./icons/alert-circle-outline.svg" alt="" />
-            </span>
+            <!-- Form -->
+            <form id="taxForm" novalidate>
+              <div class="mb-4">
+                <label style="margin-bottom: 5px" for="grossIncome">
+                  <h6>Enter gross annual income (in Lakhs)</h6>
+                </label>
+                <span
+                  class="helpIcon"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Gross annual income is your total salary in a year before any deductions"
+                  ><img src="./icons/help-circle-outline.svg" alt=""
+                /></span>
+                <div class="input-container">
+                  <input
+                    placeholder="Enter gross annual income"
+                    id="grossIncome"
+                  />
+                  <span
+                    id="grossIncomeError"
+                    class="errorIcon"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="no errors"
+                  >
+                    <img src="./icons/alert-circle-outline.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label style="margin-bottom: 5px" for="extraIncome">
+                  <h6>Enter extra income (in Lakhs)</h6></label
+                >
+                <span
+                  class="helpIcon"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Any additional earnings beyond your regular salary, such as bonuses or freelance income."
+                  ><img src="./icons/help-circle-outline.svg" alt=""
+                /></span>
+                <div class="input-container">
+                  <input
+                    placeholder="Enter extra income from other sources"
+                    id="extraIncome"
+                  />
+                  <span
+                    id="extraIncomeError"
+                    class="errorIcon"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="no errors"
+                  >
+                    <img src="./icons/alert-circle-outline.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <div class="dropdown">
+                  <label style="margin-bottom: 5px" for="age">
+                    <h6>Enter age group</h6></label
+                  >
+                  <span
+                    class="helpIcon"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="Select your age category for tax calculation purposes."
+                    ><img src="./icons/help-circle-outline.svg" alt=""
+                  /></span>
+                  <div class="input-container">
+                    <select id="age">
+                      <option disabled selected value="">
+                        Select Age Group
+                      </option>
+                      <option value="<40">&lt; 40</option>
+                      <option value="≥ 40 &lt; 60">&ge; 40 &lt; 60</option>
+                      <option value="≥ 60">&ge; 60</option>
+                    </select>
+                    <span
+                      id="ageError"
+                      class="errorIcon"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      data-bs-custom-class="custom-tooltip"
+                      data-bs-title="no errors"
+                    >
+                      <img src="./icons/alert-circle-outline.svg" alt="" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label style="margin-bottom: 5px" for="deductions">
+                  <h6>Enter total applicable deductions (in Lakhs)</h6></label
+                >
+                <span
+                  class="helpIcon"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Input the total amount of eligible deductions to reduce taxable income."
+                  ><img src="./icons/help-circle-outline.svg" alt=""
+                /></span>
+                <div class="input-container">
+                  <input
+                    placeholder="Add total applicable deductions"
+                    id="deductions"
+                  />
+                  <span
+                    id="deductionsError"
+                    class="errorIcon"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="no errors"
+                  >
+                    <img src="./icons/alert-circle-outline.svg" alt="" />
+                  </span>
+                </div>
+              </div>
+
+              <button id="submit" type="submit" class="btn btn-primary">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
-
-        <button id="submit" type="submit" class="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      </div>
+    </div>
+    <div class="faq-section">
+      <h2>Frequently asked questions</h2>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              What is gross annual income?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Gross annual income refers to the total amount of money earned by
+              an individual in a year before any deductions, such as taxes or
+              expenses, are taken into account.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              What are extra income sources?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Extra income sources include any additional earnings beyond
+              regular salary, such as bonuses, commissions, investment
+              dividends, rental income, or income from freelance work.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              How are deductions applied to taxable income?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Deductions are amounts that can be subtracted from your total
+              income to reduce your taxable income. These deductions can include
+              expenses like mortgage interest, charitable contributions, medical
+              expenses, and education expenses.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+              How is tax calculated based on income and age?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Tax calculations depend on various factors such as income level,
+              age group, and applicable tax rates. Generally, higher incomes and
+              different age groups may be subject to different tax rates.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFive">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive"
+              aria-expanded="false"
+              aria-controls="flush-collapseFive"
+            >
+              What are the tax-saving options available?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFive"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingFive"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Tax-saving options may include investments in tax-saving
+              instruments such as retirement plans, health savings accounts,
+              education savings accounts, and eligible deductions as per tax
+              laws.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSix">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSix"
+              aria-expanded="false"
+              aria-controls="flush-collapseSix"
+            >
+              Are there any penalties for incorrect tax filing?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSix"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingSix"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Incorrect tax filing may lead to penalties or fines imposed by tax
+              authorities. It's essential to file taxes accurately and on time
+              to avoid penalties.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Modal -->

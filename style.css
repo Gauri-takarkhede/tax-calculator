@@ -1,14 +1,90 @@
+/* main */
+.landing-page {
+  height: 100vh;
+  color: #044bb3;
+}
+
+.header {
+  background-color: #cfe2ff;
+  padding: 1rem 2rem;
+  display: flex;
+}
+
+.header img {
+  height: 2rem;
+}
+.header h2 {
+  margin-left: 1rem;
+  font-family: "Rowdies", sans-serif;
+}
+
+.people {
+  display: flex;
+  /* height: 2rem; */
+}
+
+.people img {
+  border-radius: 50%;
+  height: 3rem;
+  border: 1px solid white;
+}
+.p1 {
+  width: 2rem;
+}
+.p2 {
+  background-color: #cfe2ff;
+  height: 3rem;
+  width: 3rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.p2 p {
+  margin: 0.5rem;
+}
+.main {
+  display: flex;
+  width: 100%;
+  padding: 2rem;
+  justify-content: space-evenly;
+}
+
+.main-image img {
+  width: 50%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-content h1 {
+  margin: 1.5rem 0rem;
+  font-size: 3.5rem;
+  font-family: "Rowdies", sans-serif;
+}
+
 /* form */
 
+.tax-calculator {
+  background-color: #cfe2ff;
+  border-radius: 15px;
+  border: 1px solid rgb(255, 255, 255);
+}
+input,
+select {
+  background-color: #ffffffc2;
+  border-color: #044bb3;
+}
+
 .container {
-  width: 50%;
-  margin: 5rem auto;
-  padding: 2rem;
-  border: 1px solid black;
+  padding: 2rem 3rem;
 }
 .container h1 {
   padding-bottom: 1rem;
   text-align: center;
+  font-family: "Rowdies", sans-serif;
 }
 
 .helpIcon img,
@@ -60,4 +136,16 @@
 
 .modal-footer button:hover {
   background-color: #0b5ed7;
+}
+
+/* faq-section */
+.faq-section {
+  margin: 4rem auto;
+  width: 80%;
+  color: #044bb3;
+}
+
+.faq-section h2 {
+  font-family: "Rowdies", sans-serif;
+  margin-bottom: 2rem;
 }
